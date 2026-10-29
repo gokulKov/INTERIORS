@@ -69,3 +69,6 @@ body{font-size:15px;line-height:1.65}
 .floating-whatsapp svg path{fill:#fff;stroke:none}
 
 .floating-whatsapp svg{width:29px;height:33px;fill:#fff}
+
+.brand-logo{display:block;width:48px;height:48px;flex:0 0 48px;object-fit:contain;object-position:center}
+@media(max-width:680px){.brand-logo{width:40px;height:40px;flex-basis:40px}.brand-footer .brand-logo{width:35px;height:35px;flex-basis:35px}}
