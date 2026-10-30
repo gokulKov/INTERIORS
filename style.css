@@ -72,3 +72,78 @@ body{font-size:15px;line-height:1.65}
 
 .brand-logo{display:block;width:48px;height:48px;flex:0 0 48px;object-fit:contain;object-position:center}
 @media(max-width:680px){.brand-logo{width:40px;height:40px;flex-basis:40px}.brand-footer .brand-logo{width:35px;height:35px;flex-basis:35px}}
+/* Room category tiles */
+.room-categories{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px 14px;margin-top:26px}
+.room-category{min-height:138px;padding:20px 10px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;background:rgba(255,255,255,.52);border:1px solid rgba(11,46,80,.08);color:var(--navy);text-align:center;transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease}
+.room-category svg{width:48px;height:48px;flex:0 0 48px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s ease,color .25s ease}
+.room-category span{font-size:13px;font-weight:600;line-height:1.3;min-height:34px;display:flex;align-items:center;justify-content:center}
+.room-category:hover,.room-category:focus-visible{transform:translateY(-4px);background:#fff;border-color:var(--gold);box-shadow:0 12px 26px rgba(11,46,80,.08);outline:none}
+.room-category:hover svg,.room-category:focus-visible svg{color:#b58a41;transform:translateY(-2px)}
+.room-category:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+/* Client video stories */
+.client-videos{background:#f0eee7;padding-top:100px;padding-bottom:108px}
+.videos-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:34px}
+.videos-heading h2{font:500 clamp(39px,4.5vw,65px)/1.09 var(--serif);letter-spacing:-.035em;color:var(--navy);margin:18px 0 0}
+.videos-heading h2 em{color:#b9904a;font-weight:500}
+.videos-heading>p{max-width:350px;margin:0 0 5px;color:#65747b;font-size:13px;line-height:1.8}
+.video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.video-card{background:var(--paper);border:1px solid #e8e5dd;overflow:hidden;box-shadow:0 10px 24px rgba(11,46,80,.04);transition:transform .3s ease,box-shadow .3s ease}
+.video-card:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(11,46,80,.12)}
+.video-frame{aspect-ratio:9/13;background:#071b2b;overflow:hidden}
+.video-frame iframe{width:100%;height:100%;border:0;display:block}
+.video-card-copy{padding:19px 21px 22px}
+.video-card-copy span{font-size:8px;letter-spacing:.2em;color:#95743a;font-weight:700}
+.video-card-copy h3{font:500 20px/1.25 var(--serif);color:var(--navy);margin:8px 0 0}
+/* Individual room inspiration page */
+.room-page-body{background:var(--cream)}
+.room-site-header{position:sticky;top:0}
+.room-nav{display:flex;align-items:center;gap:28px;color:var(--navy);font-size:12px}
+.room-nav>a:first-child:hover,.room-back:hover{color:#a77e35}
+.room-detail-hero{min-height:355px;padding:40px 9% 58px;background:var(--navy);color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.room-detail-hero:after{content:'';position:absolute;width:410px;height:410px;border:1px solid rgba(211,177,106,.25);border-radius:50%;right:9%;top:-95px;pointer-events:none}
+.room-back{color:#d8bb7c;font-size:11px;margin-bottom:36px;position:relative;z-index:1}
+.room-detail-hero .eyebrow{color:#d8bb7c;position:relative;z-index:1}
+.room-detail-hero h1{font:500 clamp(44px,6vw,76px)/1.02 var(--serif);letter-spacing:-.04em;max-width:780px;margin:17px 0 14px;position:relative;z-index:1}
+.room-detail-hero h1 em{color:#d4b16b;font-weight:500}
+.room-detail-hero>p{font-size:14px;line-height:1.8;color:#d0d9dc;max-width:570px;margin:0 0 23px;position:relative;z-index:1}
+.room-detail-hero .button{position:relative;z-index:1}
+.room-detail-index{position:absolute;right:6%;bottom:25px;writing-mode:vertical-rl;color:#d8bb7c;letter-spacing:.18em;font-size:8px}
+.room-detail-gallery{padding-top:77px;padding-bottom:100px}
+.room-detail-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.room-detail-heading p{font-size:11px;color:#78858a;margin:0}
+.room-detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.room-detail-card{position:relative;min-width:0;min-height:300px;background:#e4e0d7;overflow:hidden;box-shadow:0 8px 22px rgba(11,46,80,.07)}
+.room-detail-card:after{content:'';position:absolute;inset:42% 0 0;background:linear-gradient(transparent,rgba(5,22,37,.91));pointer-events:none}
+.room-detail-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.room-detail-card:hover img{transform:scale(1.04)}
+.room-detail-card-copy{position:absolute;z-index:1;left:22px;right:18px;bottom:20px;color:white}
+.room-detail-card-copy>span{font-size:8px;letter-spacing:.19em;color:#f1d48d;font-weight:700}
+.room-detail-card-copy h2{font:500 23px/1.2 var(--serif);margin:8px 0 11px}
+.room-detail-card-copy>a{font-size:11px;border-bottom:1px solid #dfc17b;padding-bottom:3px}
+.room-detail-card.image-unavailable img{display:none}
+.room-detail-card.image-unavailable{background:linear-gradient(145deg,#d9d4ca,#9da5a4)}
+.floating-actions .floating-call{display:grid}
+@media(max-width:900px){.room-categories{grid-template-columns:repeat(4,minmax(0,1fr))}.video-grid,.room-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.room-categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px}.room-category{min-height:126px;padding:16px 8px;gap:10px}.room-category svg{width:44px;height:44px;flex-basis:44px}.room-category span{font-size:12px}.client-videos{padding-top:76px;padding-bottom:78px}.videos-heading{display:block;margin-bottom:26px}.videos-heading h2{font-size:43px}.videos-heading>p{font-size:12px;margin-top:15px}.video-grid,.room-detail-grid{grid-template-columns:1fr;gap:15px}.video-frame{aspect-ratio:9/14;max-height:510px}.video-card-copy{padding:17px 18px 19px}.room-nav{gap:13px;font-size:10px}.room-nav .header-cta{padding:11px 12px}.room-detail-hero{min-height:355px;padding:36px 6% 62px}.room-detail-hero h1{font-size:49px}.room-detail-hero>p{font-size:13px}.room-detail-index{right:5%;font-size:7px}.room-detail-gallery{padding:59px 6% 78px}.room-detail-heading{align-items:flex-end;gap:12px}.room-detail-heading p{font-size:9px;white-space:nowrap}.room-detail-card{min-height:320px}}
+/* Video cards use a dedicated play action and open the supplied YouTube Short */
+.video-play{position:relative;display:grid;width:100%;height:100%;place-items:center;overflow:hidden;background:radial-gradient(ellipse at center,#18334b,#071b2b 74%);color:#fff}
+.video-play:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,18,30,.08),rgba(4,18,30,.33));transition:background .25s ease}
+.video-play img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.video-play:hover img{transform:scale(1.04)}
+.video-play-button{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.04em;text-shadow:0 1px 8px rgba(0,0,0,.55)}
+.video-play-button svg{width:58px;height:58px;padding:17px;border-radius:50%;background:var(--gold);fill:var(--navy);box-shadow:0 5px 18px rgba(0,0,0,.28);transition:transform .2s ease,background .2s ease}
+.video-play:hover .video-play-button svg,.video-play:focus-visible .video-play-button svg{transform:scale(1.08);background:#e1c47e}
+.video-play:focus-visible{outline:3px solid #fff;outline-offset:-6px}
+/* Play button opens an accessible in-page YouTube player */
+.video-play{appearance:none;border:0;padding:0;font:inherit;text-align:center;cursor:pointer}
+body.video-modal-open{overflow:hidden}
+.video-modal{position:fixed;inset:0;z-index:1200;display:grid;place-items:center;padding:24px;background:rgba(4,15,25,.88);backdrop-filter:blur(5px);animation:videoFadeIn .18s ease-out}
+.video-modal-dialog{position:relative;width:min(430px,calc(100vw - 42px));height:min(760px,calc(100svh - 54px));aspect-ratio:9/16;background:#000;box-shadow:0 22px 70px rgba(0,0,0,.45)}
+.video-modal-dialog iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-modal-close{position:absolute;z-index:1;top:-44px;right:0;width:38px;height:38px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(9,34,54,.7);color:#fff;font:300 30px/1 Arial,sans-serif;cursor:pointer;display:grid;place-items:center}
+.video-modal-close:hover,.video-modal-close:focus-visible{background:var(--gold);color:var(--navy);outline:2px solid #fff;outline-offset:2px}
+.video-play-button svg{width:58px;height:58px;padding:17px;border-radius:50%;background:var(--gold);fill:var(--navy);box-shadow:0 5px 18px rgba(0,0,0,.28);transition:transform .2s ease,background .2s ease}
+.video-play:hover .video-play-button svg,.video-play:focus-visible .video-play-button svg{transform:scale(1.08);background:#e1c47e}
+.video-play:focus-visible{outline:3px solid #fff;outline-offset:-6px}
+@keyframes videoFadeIn{from{opacity:0}to{opacity:1}}
+@media(max-width:540px){.video-modal{padding:18px}.video-modal-dialog{width:min(390px,calc(100vw - 36px));height:calc(100svh - 76px);max-height:700px}.video-modal-close{top:-46px}}
