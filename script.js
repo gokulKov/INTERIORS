@@ -58,3 +58,47 @@ function openVideoModal(button){
 }
 videoButtons.forEach(button=>button.addEventListener('click',()=>openVideoModal(button)));
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&activeVideoModal)closeVideoModal()});
+
+const serviceCatalogElement = document.querySelector('#service-catalog');
+if (serviceCatalogElement && window.interiorServices) {
+  const photoFallback = 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85';
+  window.interiorServices.forEach((service, index) => {
+    const room = (window.roomGallery || []).find(item => service.rooms.includes(item.key));
+    const topicImages = window.serviceImageSets?.[service.key] || [];
+    const card = document.createElement('a');
+    card.className = 'service-tile reveal';
+    card.href = `service.html?service=${encodeURIComponent(service.key)}`;
+    card.setAttribute('aria-label', `Explore ${service.title} ideas`);
+    const image = document.createElement('img');
+    image.src = service.image || room?.images?.[0] || photoFallback;
+    image.alt = `${service.title} interior work by Fashion Interiors in Coimbatore`;
+    image.loading = index < 6 ? 'eager' : 'lazy';
+    image.decoding = 'async';
+    image.referrerPolicy = 'no-referrer';
+    image.addEventListener('error', () => {
+      if (image.dataset.fallback) { image.remove(); return; }
+      image.dataset.fallback = 'used';
+      const relevantFallback = topicImages[1] || room?.images?.[1] || photoFallback;
+      if (image.src !== relevantFallback) image.src = relevantFallback;
+      else image.remove();
+    });
+    const icon = document.createElement('span');
+    icon.className = 'service-tile-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.innerHTML = `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${service.icon}</svg>`;
+    const number = document.createElement('span');
+    number.className = 'service-tile-number';
+    number.textContent = String(index + 1).padStart(2, '0');
+    const copy = document.createElement('span');
+    copy.className = 'service-tile-copy';
+    const heading = document.createElement('strong');
+    heading.textContent = service.title;
+    const more = document.createElement('span');
+    more.textContent = 'View 10 ideas ↗';
+    copy.append(heading, more);
+    card.append(image, icon, number, copy);
+    serviceCatalogElement.append(card);
+    if ('IntersectionObserver' in window) observer.observe(card);
+    else card.classList.add('in-view');
+  });
+}
